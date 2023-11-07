@@ -1,163 +1,10 @@
-// import React, { useRef } from "react";
-// import { GoogleMap, Marker, LoadScript } from "@react-google-maps/api";
 
-// const MapComponent = () => {
-//   const mapContainerStyle = {
-//     width: "100vw",
-//     height: "100vh",
-//   };
-
-//   const center = {
-//     lat: 12.97,
-//     lng: 77.59,
-//   };
-
-//   const markers = useRef([]);
-//   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//   let labelIndex = 0;
-
-//   const handleMapClick = (event) => {
-//     console.log("clicked")
-//     const location = {
-//       lat: event.latLng.lat(),
-//       lng: event.latLng.lng(),
-//     };
-
-//     markers.current.push({
-//       location,
-//       label: labels[labelIndex++ % labels.length],
-//     });
-//   };
-
-
-//   return (
-//     <LoadScript googleMapsApiKey="AIzaSyBupTshrUEAdkQksdbc7zTDH70evJqwLhM">
-//       <GoogleMap
-//         mapContainerStyle={mapContainerStyle}
-//         center={center}
-//         zoom={12}
-//         onClick={(event) => handleMapClick(event)}
-        
-//       >
-//         {markers.current.map((marker, index) => (
-//           <Marker key={index} position={marker.location} label={marker.label} />
-//         ))}
-//       </GoogleMap>
-//     </LoadScript>
-//   );
-// };
-
-// export default MapComponent;
-
-// import React, { useEffect, useRef } from "react";
-// import { GoogleMap, Marker, LoadScript } from "@react-google-maps/api";
-
-// const MapComponent = () => {
-//   const mapContainerStyle = {
-//     width: "100vw",
-//     height: "100vh",
-//   };
-
-//   const center = {
-//     lat: 12.97,
-//     lng: 77.59,
-//   };
-
-//   const markers = useRef([]);
-//   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//   let labelIndex = 0;
-
-//   const handleMapClick = (event) => {
-//     console.log("Map Clicked"); // Check if this message appears in the console
-//     const location = {
-//       lat: event.latLng.lat(),
-//       lng: event.latLng.lng(),
-//     };
-
-//     markers.current.push({
-//       location,
-//       label: labels[labelIndex++ % labels.length],
-//     });
-
-//     console.log(markers.current); // Check the contents of the markers array
-//   };
-
- 
-
-//   return (
-//     <LoadScript googleMapsApiKey="AIzaSyBupTshrUEAdkQksdbc7zTDH70evJqwLhM">
-//       <GoogleMap
-//         mapContainerStyle={mapContainerStyle}
-//         center={center}
-//         zoom={12}
-//         onClick={(event) => handleMapClick(event)}
-//       >
-//         {markers.current.map((marker, index) => (
-//           <Marker key={index} position={marker.location} label={marker.label} />
-//         ))}
-//       </GoogleMap>
-//     </LoadScript>
-//   );
-// };
-
-// export default MapComponent;
-
-// import React, { useState } from "react";
-// import { GoogleMap, Marker, LoadScript } from "@react-google-maps/api";
-
-// const MapComponent = () => {
-//   const mapContainerStyle = {
-//     width: "100vw",
-//     height: "100vh",
-//   };
-
-//   const center = {
-//     lat: 12.97,
-//     lng: 77.59,
-//   };
-
-//   const [markers, setMarkers] = useState([]);
-//   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//   let labelIndex = 0;
-
-//   const handleMapClick = (event) => {
-//     const location = {
-//       lat: event.latLng.lat(),
-//       lng: event.latLng.lng(),
-//     };
-
-//     const newMarker = {
-//       location,
-//       label: labels[labelIndex++ % labels.length],
-//     };
-
-//     setMarkers((prevMarkers) => [...prevMarkers, newMarker]);
-  
-//   };
-
-//   return (
-//     <LoadScript googleMapsApiKey="AIzaSyBupTshrUEAdkQksdbc7zTDH70evJqwLhM">
-//       <GoogleMap
-//         mapContainerStyle={mapContainerStyle}
-//         center={center}
-//         zoom={12}
-//         onClick={(event) => handleMapClick(event)}
-//       >
-//         {markers.map((marker, index) => (
-//           <Marker key={index} position={marker.location} label={marker.label} />
-//         ))}
-//       </GoogleMap>
-//     </LoadScript>
-//   );
-// };
-
-// export default MapComponent;
 
 
 import React, { useState } from "react";
 import { GoogleMap, Marker, LoadScript } from "@react-google-maps/api";
 
-const MapComponent = () => {
+const GoogleMapView = () => {
   const mapContainerStyle = {
     width: "100vw",
     height: "100vh",
@@ -219,6 +66,8 @@ const newMarker = {
 
     if(res){
       console.log("data stored  ")
+    }else{
+      alert("error occured")
     }
   };
 
@@ -238,4 +87,4 @@ const newMarker = {
   );
 };
 
-export default MapComponent;
+export default GoogleMapView;
